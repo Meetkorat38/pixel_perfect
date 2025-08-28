@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {getAllCategories, createCategory} from '../controllers/categories.controller'
+import {getAllCategories, createCategory} from '../controllers/categories.controller.js'
 const categoriesRouter = Router();
 
 // stubbed handlers

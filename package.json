@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon --exec tsx src/index.ts",
     "build": "tsc",
+    "postbuild": "prisma generate",
     "start": "node dist/index.js",
+    "deploy": "npm install && npx prisma generate && npm run build",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --name init",
     "prisma:studio": "prisma studio",

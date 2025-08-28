@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { prisma } from "../db/index";
-import { ApiResponse } from "../utils/ApiResponse";
-import { categorySchema } from "../types/validate";
+import { prisma } from "../db/index.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { categorySchema } from "../types/validate.js";
 
 export const getAllCategories = async (_req: Request, res: Response, next: NextFunction) => {
   try {

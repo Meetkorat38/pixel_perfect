@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
-import { prisma } from "../db";
-import { ApiError } from "../utils/ApiError";
-import { ApiResponse } from "../utils/ApiResponse";
-import { uploadOnCloudinary } from "../utils/cloudinary";
-import { productSchema } from "../types/validate";
+import { prisma } from "../db/index.js";
+import { ApiError } from "../utils/ApiError.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import { productSchema } from "../types/validate.js";
 
 export const getAllProducts = async (req: Request, res: Response, next: NextFunction) => {
   try {

@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { prisma } from "../db";
-import { ApiResponse } from "../utils/ApiResponse";
-import { ApiError } from "../utils/ApiError";
-import { userCreateSchema, userUpdateSchema } from "../types/validate";
+import { prisma } from "../db/index.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { ApiError } from "../utils/ApiError.js";
+import { userCreateSchema, userUpdateSchema } from "../types/validate.js";
 
 // GET /users
 export const listUsers = async (_req: Request, res: Response, next: NextFunction) => {

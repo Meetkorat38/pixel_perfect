@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { prisma } from "../db";
-import { ApiResponse } from "../utils/ApiResponse";
-import { ApiError } from "../utils/ApiError";
-import { addToCartSchema } from "../types/validate";
+import { prisma } from "../db/index.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
+import { ApiError } from "../utils/ApiError.js";
+import { addToCartSchema } from "../types/validate.js";
 
 // POST /cart
 export const addToCart = async (req: Request, res: Response, next: NextFunction) => {

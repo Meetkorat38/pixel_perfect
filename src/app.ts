@@ -5,12 +5,12 @@ import dotenv from "dotenv";
 
 // load env variables
 dotenv.config();
-import { ApiResponse } from "./utils/ApiResponse";
-import { productsRouter } from "./routes/products.routes";
-import { categoriesRouter } from "./routes/categories.routes";
-import { cartRouter } from "./routes/cart.routes";
-import { errorHandler } from "./middlewares/errorHandler";
-import { usersRouter } from "./routes/users.routes";
+import { ApiResponse } from "./utils/ApiResponse.js";
+import { productsRouter } from "./routes/products.routes.js";
+import { categoriesRouter } from "./routes/categories.routes.js";
+import { cartRouter } from "./routes/cart.routes.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
+import { usersRouter } from "./routes/users.routes.js";
 
 const app = express();
 
@@ -33,4 +33,4 @@ app.use("/users", usersRouter);
 // ===== Error Handler (must be last) =====
 app.use(errorHandler);
 
-export default app ;
+export { app };
