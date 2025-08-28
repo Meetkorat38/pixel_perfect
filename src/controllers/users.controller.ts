@@ -2,14 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { prisma } from "../db";
 import { ApiResponse } from "../utils/ApiResponse";
 import { ApiError } from "../utils/ApiError";
-
-import { z } from "zod";
-
-export const userCreateSchema = z.object({
-  email: z.string().email(),
-});
-
-export const userUpdateSchema = userCreateSchema.partial();
+import { userCreateSchema, userUpdateSchema } from "../types/validate";
 
 // GET /users
 export const listUsers = async (_req: Request, res: Response, next: NextFunction) => {

@@ -1,12 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { prisma } from "../db/index";
 import { ApiResponse } from "../utils/ApiResponse";
-import { z } from "zod";
-
-// ✅ Zod schema - strict mode rejects any extra fields
-const categorySchema = z.object({
-  name: z.string().min(1),
-}).strict();
+import { categorySchema } from "../types/validate";
 
 export const getAllCategories = async (_req: Request, res: Response, next: NextFunction) => {
   try {

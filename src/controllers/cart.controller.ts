@@ -2,13 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { prisma } from "../db";
 import { ApiResponse } from "../utils/ApiResponse";
 import { ApiError } from "../utils/ApiError";
-import { z } from "zod";
-
-const addToCartSchema = z.object({
-  userId: z.string(),
-  productId: z.string(),
-  quantity: z.number().min(1).default(1),
-});
+import { addToCartSchema } from "../types/validate";
 
 // POST /cart
 export const addToCart = async (req: Request, res: Response, next: NextFunction) => {

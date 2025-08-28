@@ -2,18 +2,8 @@ import { Request, Response, NextFunction } from "express";
 import { prisma } from "../db";
 import { ApiError } from "../utils/ApiError";
 import { ApiResponse } from "../utils/ApiResponse";
-import { z } from "zod";
 import { uploadOnCloudinary } from "../utils/cloudinary";
-
-// ✅ Zod schema - strict mode rejects any extra fields
-const productSchema = z.object({
-  title: z.string().min(1),
-  description: z.string().min(1),
-  price: z.string().transform((val) => parseFloat(val)).pipe(z.number().positive()),
-  stock: z.string().transform((val) => parseInt(val)).pipe(z.number().int().nonnegative()),
-  categoryId: z.string(),
-  imageUrl: z.string().url().optional(),
-}).strict();
+import { productSchema } from "../types/validate";
 
 export const getAllProducts = async (req: Request, res: Response, next: NextFunction) => {
   try {
