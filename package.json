@@ -2,8 +2,15 @@
   "name": "pixel_perfect",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:studio": "prisma studio",
+    "seed": "tsx prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +24,7 @@
     "express": "^5.1.0",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
+    "nodemon": "^3.1.10",
     "zod": "^4.1.4"
   },
   "devDependencies": {
@@ -25,6 +33,7 @@
     "@types/morgan": "^1.9.10",
     "@types/multer": "^2.0.0",
     "prisma": "^6.15.0",
+    "ts-node": "^10.9.2",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2"
   }
