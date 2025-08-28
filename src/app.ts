@@ -33,4 +33,4 @@ app.use("/users", usersRouter);
 // ===== Error Handler (must be last) =====
 app.use(errorHandler);
 
-export { app };
+export default app ;
